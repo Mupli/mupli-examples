@@ -1,0 +1,17 @@
+{
+  "name": "example-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mupli-api": "^1.0.1",
+    "mupli-core": "^1.0.0"
+  }
+}
