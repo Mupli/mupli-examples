@@ -1,0 +1,16 @@
+{
+  "name": "example-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/app.js",
+  "type": "module",
+  "scripts": {
+    "start" : "node app/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mupli-core": "^1.0.1"
+  }
+}

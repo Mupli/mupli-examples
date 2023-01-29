@@ -1,0 +1,10 @@
+{
+    "myapp": {
+        "hosts": ["localhost"],
+        "modules": ["custom"]
+    },
+    "myapp2": {
+        "hosts": ["127.0.0.1"],
+        "modules": ["custom"]
+    }
+}
