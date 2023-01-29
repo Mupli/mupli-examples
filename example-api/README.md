@@ -1,31 +1,24 @@
 
-
-
-
 # Example of api module 
-## about Mupli 
-Project to support implementation of highly reusable modules. 
 
-## about api
+## About Mupli 
+Project to integrate multiple highly reusable modules. <br/> 
+It Supports multiple pages on one server as well. 
+
+## About api
 Api module provides files autoloading and transform functions into Rest Api methods. 
-
 
 
 ## Hot to run
 
-install deps
+Just execute:
 ```
 npm install 
-```
-
-
-run server 
-```
 npm  start
 ```
 
 
-got to 
+Go to:
 ```
 http://localhost:3000/api/test 
 http://localhost:3000/api/test/accepted
@@ -34,17 +27,21 @@ curl -X POST http://localhost:3000/api/test/test
 
 ```
 
-## MINIMAL CONFIG  with some examples
+## Some examples with configuration
 
 
 /config/apps.json 
 
 ```json
 {
-    "customProjectName": {
+    "exampleProject": {
         "hosts": ["localhost"],
-        "modules": ["api", "api-2", "custom"]
+        "modules": ["api", "custom"]
     },
+    "La-Li-Lu-Le-Lo": {
+        "hosts": ["the.patriots.com", "127.0.0.1"],
+        "modules": ["api-2", "custom"]
+    }
 }
 ```
 
@@ -83,27 +80,36 @@ const customModule = {
 ```
 
 
-/app/customProjectName/api/test.js
+/app/exampleProject/api/test.js
 
 ```javascript
 export function init(ctx) {
     return "init OK"
 }
 ```
-/app/customProjectName/api-2/test.js
+/app/La-Li-Lu-Le-Lo/api-2/test.js
 
 ```javascript
-export function init(ctx) {
-    return "init OK Api 2"
-}
+export const init = [
+    validateAjv(schema), // 
+    isAuthenticated(), //mupli-middlewares
+    isMethods("GET", "POST", "HEAD")
+    
+    (ctx) => {
+        return {message: "init OK Api 2"}
+    }]
 ```
+
 
 Execute 
 ```
 http://localhost:3000/api/test 
-http://localhost:3000/api-2/test 
+
+http://127.0.0.1:3000/api-2/test 
 
 ```
+
+
 
 
 ##  Goal & vision 
